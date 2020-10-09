@@ -13,8 +13,8 @@ import xlrd
 # comments_dataframe = pandas.DataFrame(text_for_analysis)
 
 # TO DO adjust this so that it reflects the actual form of input
-text_for_analysis = '../Paycor_Vader_docs/Performance_Feedback.csv'
-comments_read = pandas.read_csv(text_for_analysis)
+text_for_analysis = '../New_Vader_docs/test_comments_1.xlsx'
+comments_read = pandas.read_excel(text_for_analysis)
 comments_dataframe = pandas.DataFrame(comments_read)
 
 # split the data into features and labels
@@ -47,7 +47,11 @@ analysis, predictions = analyze_text(X)
 
 readout = {'score breakdown': analysis, 'vader_predictions': predictions, 'actual': y}
 
-pandas.DataFrame(readout).to_csv('../Paycor_Vader_docs/results_run_1a.csv', index=False)
+# this is using the base Vader lexicon which is trained on social media
+pandas.DataFrame(readout).to_csv('../Newr_Vader_docs/results_base_1.csv', index=False)
+
+# this is using the modified lexicon
+# pandas.DataFrame(readout).to_csv('../Newr_Vader_docs/results_mod_1.csv', index=False)
 
 
 # evaluate, accept nothing less than 98% :D
