@@ -2,11 +2,11 @@ import csv
 import re
 import statistics
 
-complete_lexicon = open('../vaderSentiment/paycor_mod_lexicon.txt', 'a')
+complete_lexicon = open('../vaderSentiment/mod_lexicon.txt', 'a')
 
 # any time we make an update we will want to only include the new words so we don't have duplicates
 # make sure in upcoming edits to start the loop at the row where new words have been added
-with open('../Paycor_Vader_docs/lexicon_scored.csv') as lexicon_file:
+with open('../New_Vader_docs/lexicon_scored.csv') as lexicon_file:
     file_reader = csv.reader(lexicon_file, delimiter=',')
     line_count = 0
 
